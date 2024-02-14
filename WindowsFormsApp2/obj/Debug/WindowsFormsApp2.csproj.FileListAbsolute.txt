@@ -1,0 +1,155 @@
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.SuggestedBindingRedirects.cache
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LOGIN.resources
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.KASIR.resources
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Protobuf.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\MySql.Data.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Buffers.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.IO.Pipelines.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Memory.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\ZstdSharp.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Protobuf.pdb
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Protobuf.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\MySql.Data.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Buffers.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.IO.Pipelines.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Memory.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.AdminB.resources
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Owner.resources
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CopyComplete
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.adminA.resources
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ownerT.resources
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Dapper.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\stdole.dll
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Dapper.xml
+C:\Users\waliy\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Formtrx.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\BouncyCastle.Cryptography.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.Shared.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Dapper.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Protobuf.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Compression.LZ4.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Hash.xxHash.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\MySql.Data.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Buffers.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.IO.Pipelines.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Memory.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Numerics.Vectors.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\ZstdSharp.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\stdole.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\BouncyCastle.Cryptography.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Dapper.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Protobuf.pdb
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Protobuf.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Compression.LZ4.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\K4os.Hash.xxHash.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\MySql.Data.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Buffers.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.IO.Pipelines.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Memory.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Numerics.Vectors.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.kasir.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.laporan.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LOGIN.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Owner.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ownerT.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CopyComplete
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\BouncyCastle.Crypto.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\itextsharp.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\itextsharp.xml
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.dbkasir.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.adminuser.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Adminbarang.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.kasirt.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu_UI_v1.52.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe.licenses
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.BunifuSeparator.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.adminT.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.historyT.resources
