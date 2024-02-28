@@ -76,7 +76,7 @@
             this.pw.IconRight = null;
             this.pw.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.pw.Lines = new string[0];
-            this.pw.Location = new System.Drawing.Point(396, 192);
+            this.pw.Location = new System.Drawing.Point(471, 233);
             this.pw.MaxLength = 32767;
             this.pw.MinimumSize = new System.Drawing.Size(1, 1);
             this.pw.Modified = false;
@@ -129,7 +129,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
             this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(408, 230);
+            this.checkBox1.Location = new System.Drawing.Point(483, 271);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(107, 17);
             this.checkBox1.TabIndex = 24;
@@ -165,7 +165,7 @@
             this.us.IconRight = null;
             this.us.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.us.Lines = new string[0];
-            this.us.Location = new System.Drawing.Point(396, 141);
+            this.us.Location = new System.Drawing.Point(471, 182);
             this.us.MaxLength = 32767;
             this.us.MinimumSize = new System.Drawing.Size(1, 1);
             this.us.Modified = false;
@@ -226,7 +226,7 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(269, 350);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(310, 505);
             this.bunifuGradientPanel1.TabIndex = 26;
             // 
             // label3
@@ -287,7 +287,7 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(425, 286);
+            this.bunifuButton1.Location = new System.Drawing.Point(500, 327);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 30;
@@ -339,7 +339,7 @@
             this.bunifuSeparator1.LineColor = System.Drawing.Color.Silver;
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(348, 111);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(423, 152);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator1.Size = new System.Drawing.Size(300, 14);
@@ -350,7 +350,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label2.Location = new System.Drawing.Point(439, 58);
+            this.label2.Location = new System.Drawing.Point(514, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 50);
             this.label2.TabIndex = 29;
@@ -361,7 +361,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(692, 350);
+            this.ClientSize = new System.Drawing.Size(829, 501);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.bunifuButton1);
@@ -370,6 +370,7 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.us);
             this.Name = "LOGIN";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);

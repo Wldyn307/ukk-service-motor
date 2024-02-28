@@ -37,20 +37,20 @@ namespace WindowsFormsApp2
                         Console.WriteLine(Data.id_user);
 
                         
-                        MessageBox.Show("Login sukses !", "informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Login berhasil  !", "informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                        
                         if (Data.role == "admin")
                         {
                             p.command("insert into log (id_user , activity, created_at) VALUES ('" + Data.id_user + "', 'Loginn As Admin' , NOW())");
                             this.Hide();
-                            new Adminbarang().Show();
+                            new dbadmin().Show();
                         }
                         else if (Data.role == "kasir")
                         {
                             p.command("insert into log (id_user , activity, created_at) VALUES ('" + Data.id_user + "', 'Login As Kasir' , NOW())");
                            
                             this.Hide();
-                            new kasirt().Show();
+                            new dbkasir().Show();
                         }
                         else if (Data.role == "owner")
                         {

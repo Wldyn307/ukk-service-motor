@@ -153,3 +153,6 @@ C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinFo
 C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
 C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.adminT.resources
 C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.historyT.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.dbadmin.resources
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.dll
+C:\ujiom dekstop App\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ownerBarang.resources

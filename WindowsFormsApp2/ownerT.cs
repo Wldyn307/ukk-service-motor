@@ -83,12 +83,12 @@ namespace WindowsFormsApp2
                 doc.Add(currentTime);
 
                 // Membuat table dengan jumlah kolom sesuai dengan jumlah kolom di dalam DataGridView
-                PdfPTable table = new PdfPTable(dataGridView1.Columns.Count);
+                PdfPTable table = new PdfPTable(datagrid.Columns.Count);
 
                 // Menambahkan header ke dalam table
-                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                for (int i = 0; i < datagrid.Columns.Count; i++)
                 {
-                    PdfPCell cell = new PdfPCell(new Phrase(dataGridView1.Columns[i].HeaderText));
+                    PdfPCell cell = new PdfPCell(new Phrase(datagrid.Columns[i].HeaderText));
                     cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     cell.VerticalAlignment = Element.ALIGN_MIDDLE;
@@ -98,13 +98,13 @@ namespace WindowsFormsApp2
                 }
 
                 // Menambahkan data dari DataGridView ke dalam table
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                for (int i = 0; i < datagrid.Rows.Count; i++)
                 {
-                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    for (int j = 0; j < datagrid.Columns.Count; j++)
                     {
-                        if (dataGridView1[j, i].Value != null)
+                        if (datagrid[j, i].Value != null)
                         {
-                            PdfPCell cell = new PdfPCell(new Phrase(dataGridView1[j, i].Value.ToString()));
+                            PdfPCell cell = new PdfPCell(new Phrase(datagrid[j, i].Value.ToString()));
                             cell.Padding = 5;
                             cell.BorderWidth = 1;
                             table.AddCell(cell);
@@ -122,11 +122,11 @@ namespace WindowsFormsApp2
                 doc.Add(table);
                 // Menghitung total uang bayar dari DataGridView
                 double totalUangBayar = 0;
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                for (int i = 0; i < datagrid.Rows.Count; i++)
                 {
-                    if (dataGridView1.Rows[i].Cells[8].Value != null)
+                    if (datagrid.Rows[i].Cells[8].Value != null)
                     {
-                        totalUangBayar += Convert.ToDouble(dataGridView1.Rows[i].Cells[8].Value);
+                        totalUangBayar += Convert.ToDouble(datagrid.Rows[i].Cells[8].Value);
                     }
                 }
 
@@ -158,14 +158,14 @@ namespace WindowsFormsApp2
                         conn.Open();
                     using (DataTable dt = new DataTable("transaksi"))
                     {
-                        using (MySqlCommand cmd = new MySqlCommand("SELECT l.id, " + " l.nama_pelanggan,l.id_produk,u.kode_produk, u.nama_produk, u.harga_produk, l.uang_bayar, l.uang_kembali , l.total_harga, l.nomor_unik, l.created_at " + "FROM transaksi l " +  "JOIN products u ON l.id_produk = u.id  WHERE DATE (l.created_at) >= DATE (@fromdate) AND DATE (l.created_at) < DATE (@todate + INTERVAL 1 DAY)", conn))
+                        using (MySqlCommand cmd = new MySqlCommand("SELECT l.id, " + " l.nama_pelanggan,l.id_produk, u.nama_produk, u.harga_produk, l.uang_bayar, l.uang_kembali , l.total_harga, l.nomor_unik, l.created_at " + "FROM transaksi l " +  "JOIN products u ON l.id_produk = u.id  WHERE DATE (l.created_at) >= DATE (@fromdate) AND DATE (l.created_at) < DATE (@todate + INTERVAL 1 DAY)", conn))
 
                         {
                             cmd.Parameters.AddWithValue("@fromdate", dt1.Value.Date);
                             cmd.Parameters.AddWithValue("@todate", dt2.Value.Date);
                             MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(cmd);
                             mySqlDataAdapter.Fill(dt);
-                            dataGridView1.DataSource = dt;
+                            datagrid.DataSource = dt;
                         }
                     }
                 }
@@ -183,13 +183,13 @@ namespace WindowsFormsApp2
         private void ownerT_Load(object sender, EventArgs e)
         {
             string query = "SELECT l.id, " +
-               " l.nama_pelanggan,l.id_produk,u.kode_produk, u.nama_produk, u.harga_produk, l.uang_bayar, l.uang_kembali , l.total_harga, l.nomor_unik, l.created_at " +
+               " l.nama_pelanggan,l.id_produk, u.nama_produk, u.harga_produk, l.uang_bayar, l.uang_kembali , l.total_harga, l.nomor_unik, l.created_at " +
             "FROM transaksi l " +
                  "JOIN products u ON l.id_produk = u.id";
-            p.showData(query, dataGridView1);
+            p.showData(query, datagrid);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void datagrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
 
@@ -261,6 +261,12 @@ namespace WindowsFormsApp2
         private void button1_Click_1(object sender, EventArgs e)
         {
             print();
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ownerBarang().Show();
         }
     }
 }

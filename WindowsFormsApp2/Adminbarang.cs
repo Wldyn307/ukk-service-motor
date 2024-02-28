@@ -22,7 +22,7 @@ namespace WindowsFormsApp2
 
         private void Logout()
         {
-            p.command("insert into log (id_user , activity, created_at) VALUES ('" + Data.id_user + "', 'Admin logout' , NOW())");
+            p.command("insert into log (id_user , activity, created_at) VALUES ('" + Data.id_user + "', 'Admin menambahkan user' , NOW())");
             DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
@@ -48,7 +48,7 @@ namespace WindowsFormsApp2
             nama.Text = string.Empty;
             harga.Text = string.Empty;
             txtstok.Text = string.Empty;
-            txtkode.Text = string.Empty;
+        
             p.showData("Select * from products", DataGridView1);
         }
 
@@ -68,11 +68,11 @@ namespace WindowsFormsApp2
             }
             else
             {
-                DialogResult result = MessageBox.Show("Apakah Anda yakin ingin mengupdate barang ini?", "Konfirmasi Hapus Barang", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Apakah Anda yakin ingin menambahkan data barang ini?", "Konfirmasi Hapus Barang", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    string query = "INSERT INTO products (kode_produk, nama_produk, harga_produk, stok, created_at) VALUES ('" + txtkode.Text + "', '" + nama.Text + "', '" + harga.Text + "','" + txtstok.Text + "', NOW() )";
+                    string query = "INSERT INTO products ( nama_produk, harga_produk, stok, created_at) VALUES ( '" + nama.Text + "', '" + harga.Text + "','" + txtstok.Text + "', NOW() )";
                     p.command(query);
                     clear();
                 }
@@ -81,7 +81,7 @@ namespace WindowsFormsApp2
 
         void update()
         {
-            p.command("insert into log (id_user , activity, created_at) VALUES ('" + Data.id_user + "', 'Admin edits products' , NOW())");
+            p.command("insert into log (id_user , activity, created_at) VALUES ('" + Data.id_user + "', 'Admin edit produk' , NOW())");
             if (nama.Text == string.Empty || harga.Text == string.Empty || txtstok.Text == string.Empty)
             {
                 MessageBox.Show("semua kolom harus di isi!");
@@ -92,7 +92,7 @@ namespace WindowsFormsApp2
 
                 if (result == DialogResult.Yes)
                 {
-                    p.command("update products set kode_produk = '" + txtkode.Text + "', nama_produk = '" + nama.Text + "', harga_produk = '" + harga.Text + "',stok = '" + txtstok.Text + "', updated_at = NOW() where id = '" + id + "' ");
+                    p.command("update products set nama_produk = '" + nama.Text + "', harga_produk = '" + harga.Text + "',stok = '" + txtstok.Text + "', updated_at = NOW() where id = '" + id + "' ");
                     clear();
                 }
             }
@@ -100,7 +100,7 @@ namespace WindowsFormsApp2
 
         void delete()
         {
-            p.command("insert into log (id_user, activity, created_at) VALUES ('" + Data.id_user + "', 'Admin deletes product', NOW())");
+            p.command("insert into log (id_user, activity, created_at) VALUES ('" + Data.id_user + "', 'Admin menghapus produc', NOW())");
 
             if (nama.Text == string.Empty || harga.Text == string.Empty)
             {
@@ -114,7 +114,7 @@ namespace WindowsFormsApp2
                 if (result == DialogResult.Yes)
                 {
 
-                    p.command("delete from products where kode_produk = '" + txtkode.Text + "'");
+                    p.command("delete from products where nama_produk = '" + nama.Text + "'");
                     clear();
                 }
 
@@ -168,7 +168,7 @@ namespace WindowsFormsApp2
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            p.showData("select * from products where nama_produk like '" + txtcari.Text + "%'", DataGridView1);
+           
         }
 
         private void bunifuButton6_Click(object sender, EventArgs e)
@@ -197,17 +197,18 @@ namespace WindowsFormsApp2
             btntambah.Enabled = false;
             btnedit.Enabled = true;
             DataGridViewRow dr = this.DataGridView1.Rows[e.RowIndex];
-            nama.Text = dr.Cells[2].Value.ToString();
-            harga.Text = dr.Cells[3].Value.ToString();
-            txtstok.Text = dr.Cells[4].Value.ToString();
+            nama.Text = dr.Cells[1].Value.ToString();
+            harga.Text = dr.Cells[2].Value.ToString();
+            txtstok.Text = dr.Cells[3].Value.ToString();
             id = dr.Cells[0].Value.ToString();
-            txtkode.Text = dr.Cells[1].Value.ToString();
+           
             
         }
 
         private void btnedit_Click(object sender, EventArgs e)
         {
             btntambah.Enabled = true;
+            btnedit.Enabled = false;
             update();
 
         }
@@ -232,6 +233,18 @@ namespace WindowsFormsApp2
         {
             clear();
             btntambah.Enabled = true;
+        }
+
+        private void bunifuButton2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new adminT().Show();
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new dbadmin().Show();
         }
     }
 }

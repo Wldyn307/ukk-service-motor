@@ -33,7 +33,7 @@ namespace WindowsFormsApp2
 
         void insert()
         {
-            p.command("insert into log (id_user, activity, created_at) VALUES ('" + Data.id_user + "', 'Admin adds users', NOW())");
+            p.command("insert into log (id_user, activity, created_at) VALUES ('" + Data.id_user + "', 'Admin menambahkan user', NOW())");
             if (us.Text == string.Empty || pw.Text == string.Empty || nama.Text == string.Empty || role.Text == string.Empty)
             {
                 MessageBox.Show("Semua kolom harus diisi!");
@@ -54,14 +54,14 @@ namespace WindowsFormsApp2
         void update()
         {
 
-            p.command("insert into log (id_user, activity, created_at) VALUES ('" + Data.id_user + "', 'Admin edits product', NOW())");
+            p.command("insert into log (id_user, activity, created_at) VALUES ('" + Data.id_user + "', 'Admin edit produk', NOW())");
             if (us.Text == string.Empty || pw.Text == string.Empty || nama.Text == string.Empty || role.Text == string.Empty)
             {
                 MessageBox.Show("semua kolom harus di isi!");
             }
             else
             {
-                DialogResult result = MessageBox.Show("Apakah Anda yakin ingin update barang ini?", "Konfirmasi Hapus Barang", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Apakah Anda yakin ingin update barang ini?", "Konfirmasi update Barang", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     p.command("update users SET username = '" + us.Text + "', password = '" + pw.Text + "', nama = '" + nama.Text + "', role = '" + role.Text + "', updated_at = NOW() WHERE id = '" + id + "'");
@@ -73,7 +73,7 @@ namespace WindowsFormsApp2
 
         void delete()
         {
-            p.command("insert into log (id_user, activity, created_at) VALUES ('" + Data.id_user + "', 'Admin deletes product', NOW())");
+            p.command("insert into log (id_user, activity, created_at) VALUES ('" + Data.id_user + "', 'Admin menghapus produk', NOW())");
             {
                 if (us.Text == string.Empty || pw.Text == string.Empty)
                 {
@@ -203,7 +203,8 @@ namespace WindowsFormsApp2
         private void bunifuButton3_Click(object sender, EventArgs e)
         {
             update();
-            btntambah.Enabled = false;
+            btntambah.Enabled = true;
+            btnedit.Enabled = false;
         }
 
         private void bunifuButton4_Click(object sender, EventArgs e)
@@ -226,6 +227,24 @@ namespace WindowsFormsApp2
         {
             this.Hide();
             new adminT().Show();
+        }
+
+        private void bunifuButton3_Click_2(object sender, EventArgs e)
+        {
+            this.Hide();
+            new adminT().Show();
+        }
+
+        private void bunifuButton4_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new dbadmin().Show();
+        }
+
+        private void btnbatal_Click(object sender, EventArgs e)
+        {
+            btntambah.Enabled = true;
+            clear();
         }
     }
 }

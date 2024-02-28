@@ -58,7 +58,7 @@ namespace WindowsFormsApp2
 
         private void dbkasir_Load(object sender, EventArgs e)
         {
-
+            p.showData("select * from products", dataGridView1);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -81,6 +81,16 @@ namespace WindowsFormsApp2
         private void bunifuButton6_Click(object sender, EventArgs e)
         {
             Logout();
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

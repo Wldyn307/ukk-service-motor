@@ -41,8 +41,6 @@ namespace WindowsFormsApp2
            
         }
 
-       
-
         void numrandom()
         {
             Random random = new Random();
@@ -52,12 +50,12 @@ namespace WindowsFormsApp2
         void getBarang()
         {
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT kode_produk, nama_produk FROM products", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT id, nama_produk FROM products", conn);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                id = reader["kode_produk"].ToString();
+                id = reader["id"].ToString();
                 nama = reader["nama_produk"].ToString();
                 cbidnm.Items.Add(id + "-" + nama);
             }
@@ -71,7 +69,7 @@ namespace WindowsFormsApp2
         {
             MySqlConnection conn = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gatolin");
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("select harga_produk from products where kode_produk like '" + cbidnm.Text.Split('-')[0].Trim() + "%'", conn);
+            MySqlCommand cmd = new MySqlCommand("select harga_produk from products where id like '" + cbidnm.Text.Split('-')[0].Trim() + "%'", conn);
             MySqlDataReader reader = cmd.ExecuteReader();
             string harga_satuan = "";
 
@@ -100,17 +98,7 @@ namespace WindowsFormsApp2
             }
         }
 
-        void tambahtroli()
-        {
-            DialogResult d;
-            d = MessageBox.Show("Apakah anda yakin?", "Pertanyaan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (d == DialogResult.Yes)
-            {
-                addTroli();
-                clear1();
-                UpdateTotalHarga();
-            }
-        }
+       
 
 
 
@@ -133,6 +121,8 @@ namespace WindowsFormsApp2
 
             TextObject namap = (TextObject)cr1.ReportDefinition.Sections["Section3"].ReportObjects["namap"];
             namap.Text = dr.Cells[1].Value.ToString();
+            TextObject notransaksi = (TextObject)cr1.ReportDefinition.Sections["Section3"].ReportObjects["Notransaksi"];
+            notransaksi.Text = dr.Cells[5].Value.ToString();
             TextObject idproduk = (TextObject)cr1.ReportDefinition.Sections["Section3"].ReportObjects["idproduk"];
             idproduk.Text = dr.Cells[2].Value.ToString();
             TextObject namaproduk = (TextObject)cr1.ReportDefinition.Sections["Section3"].ReportObjects["namaproduk"];
@@ -152,11 +142,11 @@ namespace WindowsFormsApp2
         void addTroli()
         {
             string namap = txtnamap.Text;
-            string kode = cbidnm.Text.Split('-')[0].Trim();
+            string id = cbidnm.Text.Split('-')[0].Trim();
             string namaproduk = cbidnm.Text.Split('-')[1].Trim();
             string harga = txthargap.Text;
            
-            string totalharga = txthargap.Text;
+           
             string nonik = txtnounik.Text;
             
 
@@ -164,7 +154,7 @@ namespace WindowsFormsApp2
             dgtransaksi.Rows.Add();
             dgtransaksi.Rows[i].Cells[0].Value = IdTr;
             dgtransaksi.Rows[i].Cells[1].Value = namap;
-            dgtransaksi.Rows[i].Cells[2].Value = kode;
+            dgtransaksi.Rows[i].Cells[2].Value = id;
             dgtransaksi.Rows[i].Cells[3].Value = namaproduk;
             dgtransaksi.Rows[i].Cells[4].Value = harga;
            
@@ -210,14 +200,14 @@ namespace WindowsFormsApp2
 
         private void UpdateKembalian(object sender, EventArgs e)
         {
-            // Memeriksa apakah nilai di TextBox Total dan Uang Bayar valid
+      
             if (decimal.TryParse(lblTotal.Text, out decimal totalBelanja) && decimal.TryParse(txtuangb.Text, out decimal uangBayar))
             {
-                // Menghitung kembalian
+              
                 decimal kembalian = uangBayar- totalBelanja;
 
-                // Menampilkan hasil ke Label Kembalian
-                txtkembali.Text = kembalian.ToString("0.##"); // Menampilkan sebagai mata uang
+                
+                txtkembali.Text = kembalian.ToString("0.##"); 
             }
             else
             {
@@ -235,7 +225,7 @@ namespace WindowsFormsApp2
             string productId = dr.Cells[2].Value.ToString();
             {
                 // Kurangi stok berdasarkan nilai qty
-                string updateQuery = "UPDATE products SET stok = stok - 1 WHERE kode_produk = @productId";
+                string updateQuery = "UPDATE products SET stok = stok - 1 WHERE id = @productId";
 
                 using (MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;username=root;password=;database=gatolin"))
                 {
@@ -259,7 +249,7 @@ namespace WindowsFormsApp2
 
         private void kasir_Load(object sender, EventArgs e)
         {
-            label8 .Text = Data.username;
+            txtnounik.Enabled = false;
             numrandom();
             getBarang();
           
@@ -315,6 +305,14 @@ namespace WindowsFormsApp2
             DataGridViewRow dr = this.dataGridView1.Rows[e.RowIndex];
 
             txthargap.Text = dr.Cells[2].Value.ToString();
+            string kodeproduk = dr.Cells[0].Value.ToString();
+          
+            string namaProduk = dr.Cells[1].Value.ToString();
+
+           
+            string combined = kodeproduk + "-" + namaProduk;
+
+           cbidnm.Text = combined;
 
         }
 
@@ -359,28 +357,80 @@ namespace WindowsFormsApp2
 
         }
 
-        void cekStok(string kodeBarang)
+        private int GetStok(string productId)
         {
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT stok FROM products WHERE kode_produk = @kode", conn);
-            cmd.Parameters.AddWithValue("@kode", kodeBarang);
-            int stok = Convert.ToInt32(cmd.ExecuteScalar());
+            int stok = 0;
 
-            if (stok == 0)
+            using (MySqlConnection conn = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gatolin"))
             {
-                MessageBox.Show("Stok untuk barang ini habis.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            } 
-            conn.Close();
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT stok FROM products WHERE id = @productId", conn);
+                cmd.Parameters.AddWithValue("@productId", productId);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    stok = Convert.ToInt32(result);
+                }
+            }
+
+            return stok;
         }
 
+        private int GetProductStock(string productID)
+        {
+            int stock = 0;
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=gatolin";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                string query = "SELECT stok FROM Products WHERE id = @ProductID";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ProductID", productID);
+
+                try
+                {
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        stock = Convert.ToInt32(result);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+            return stock;
+        }
 
         private void cbidnm_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedItemId = cbidnm.SelectedItem.ToString().Split('-')[0].Trim();
+            if (cbidnm.SelectedItem == null)
+            {
+               
+                cbidnm.SelectedIndex = -1;
+                return;
+            }
 
+            string selectedProductID = cbidnm.SelectedItem.ToString().Split('-')[0].Trim();
 
-            cekStok(selectedItemId);
-            txthargap.Text = GetHarga();
+            int productStock = GetProductStock(selectedProductID);
+
+            if (productStock <= 0)
+            {
+               
+                MessageBox.Show("Stok habis! Silakan pilih item lain.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbidnm.SelectedIndex = -1;
+                txthargap.Text = string.Empty;
+
+            }
+            else
+            {
+                txthargap.Text = GetHarga();
+            }
         }
 
         private void txthargap_TextChanged(object sender, EventArgs e)
@@ -404,7 +454,29 @@ namespace WindowsFormsApp2
 
         private void btntambah_Click(object sender, EventArgs e)
         {
-            tambahtroli();
+            DialogResult d;
+            d = MessageBox.Show("Apakah anda yakin?", "Pertanyaan", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (d == DialogResult.Yes)
+            {
+                // Cek apakah nama pelanggan sudah diisi
+                if (string.IsNullOrEmpty(txtnamap.Text))
+                {
+                    MessageBox.Show("Mohon isi nama pelanggan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Hentikan proses karena nama pelanggan belum diisi
+                }
+
+                // Cek apakah nama barang sudah dipilih
+                if (cbidnm.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Mohon pilih produk.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Hentikan proses karena produk belum dipilih
+                }
+
+                addTroli();
+                clear1();
+                UpdateTotalHarga();
+            }
+
         }
 
         void rdm()
@@ -423,34 +495,33 @@ namespace WindowsFormsApp2
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gatolin");
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+
             foreach (DataGridViewRow dr in dgtransaksi.Rows)
             {
                 if (dr.Cells[0].Value != null || dr.Cells[1].Value != null || dr.Cells[2].Value != null || dr.Cells[3].Value != null || dr.Cells[4].Value != null || dr.Cells[5].Value != null || dr.Cells[6].Value != null)
                 {
-
                     kurangistokk();
-                    string kode_produk = dr.Cells[2].Value.ToString();
-                    
+                    string id_produk = dr.Cells[2].Value.ToString();
                     string nama_pelanggan = dr.Cells[1].Value.ToString();
                     string totalharga = Convert.ToString(lblTotal.Text);
-                    Random random = new Random();
-                    int nomorUnik = random.Next(10000, 99999); // Ubah rentang sesuai kebutuhan
-
+                    string nomorUnik = dr.Cells[5].Value.ToString();
                     string uang_bayar = Convert.ToString(txtuangb.Text);
                     string uang_kembali = Convert.ToString(txtkembali.Text);
-                    /* decimal uang_kembali = Convert.ToDecimal(txtkembali.Text.Replace("Rp.", ""));*/
-                    // Temukan posisi tanda '-' dalam string
-                    int index = kode_produk.IndexOf('-');
-                    // Jika tanda '-' ditemukan, ambil semua karakter sebelumnya
-                    string kodeProduk = index != -1 ? kode_produk.Substring(0, index) : kode_produk;
+                  
+
                     struk();
-                    p.command("INSERT INTO transaksi (id_produk, nama_pelanggan, nomor_unik, total_harga, uang_bayar, uang_kembali, created_at, updated_at) values ((select id from products where kode_produk = '" + kodeProduk + "'), '" + nama_pelanggan + "', '" + nomorUnik + "', '" + totalharga + "', '" + uang_bayar + "', '" + uang_kembali + "', NOW(), NOW())");
+
+                    p.command("INSERT INTO transaksi (id_produk, nama_pelanggan, nomor_unik, uang_bayar, uang_kembali ,total_harga, created_at, updated_at) values ('" + id_produk + "' , '" + nama_pelanggan + "', '" + nomorUnik + "', '" + uang_bayar + "', '" + uang_kembali + "', '" + totalharga + "', NOW(), NOW())");
+                    p.command("insert into log (id_user , activity, created_at) VALUES ('" + Data.id_user + "', 'kasir melakukan transaksi' , NOW())");
                     clear();
                     rdm();
                 }
-
             }
+
         }
 
         private void bunifuButton1_Click(object sender, EventArgs e)

@@ -47,20 +47,15 @@ namespace WindowsFormsApp2
                 {
                     if (dr.Cells[0].Value != null || dr.Cells[1].Value != null || dr.Cells[2].Value != null || dr.Cells[3].Value != null || dr.Cells[4].Value != null || dr.Cells[5].Value != null || dr.Cells[6].Value != null)
                     {
-                        string kode_produk = dr.Cells[3].Value.ToString();
+                        string id_produk = dr.Cells[3].Value.ToString();
                         string nama_pelanggan = dr.Cells[2].Value.ToString();
                         string nomorUnik = dr.Cells[1].Value.ToString();
                         int uang_bayar = Convert.ToInt32(txtuangb.Text);
                         int uang_kembali = Convert.ToInt32(txtkembali.Text.Replace("Rp.", ""));
                         int totalhargab = Convert.ToInt32(lblTotal.Text);
 
-                        // Temukan posisi tanda '-' dalam string
-                        int index = kode_produk.IndexOf('-');
 
-                        // Jika tanda '-' ditemukan, ambil semua karakter sebelumnya
-                        string kodeProduk = index != -1 ? kode_produk.Substring(0, index) : kode_produk;
-
-                        p.command("INSERT INTO transaksi (id_produk, nama_pelanggan, nomor_unik, total_harga, uang_bayar, uang_kembali, created_at, updated_at) values ((select id from products where kode_produk = '" + kodeProduk + "'), '" + nama_pelanggan + "', '" + nomorUnik + "', '" + totalhargab + "', '" + uang_bayar + "', '" + uang_kembali + "', NOW(), NOW())");
+                        p.command("INSERT INTO transaksi (id_produk, nama_pelanggan, nomor_unik, total_harga, uang_bayar, uang_kembali, created_at, updated_at) values ('" + id_produk + "', '" + nama_pelanggan + "', '" + nomorUnik + "', '" + totalhargab + "', '" + uang_bayar + "', '" + uang_kembali + "', NOW(), NOW())");
                     }
                 }
             }
@@ -93,7 +88,7 @@ namespace WindowsFormsApp2
         void addTroli()
         {
             string namap = txtnamap.Text;
-            string kode = cbnamak.Text.Split('-')[0].Trim();
+            string id = cbnamak.Text.Split('-')[0].Trim();
             string namaproduk = cbnamak.Text.Split('-')[1].Trim();
             string hargatotal = txttotal.Text;
             string hargasatuan = txthargap.Text;
@@ -105,7 +100,7 @@ namespace WindowsFormsApp2
             dgtransaksi.Rows[i].Cells[0].Value = IdTr;
             dgtransaksi.Rows[i].Cells[1].Value = nounik;
             dgtransaksi.Rows[i].Cells[2].Value = namap;
-            dgtransaksi.Rows[i].Cells[3].Value = kode;
+            dgtransaksi.Rows[i].Cells[3].Value = id;
             dgtransaksi.Rows[i].Cells[4].Value = namaproduk;
             dgtransaksi.Rows[i].Cells[5].Value = hargasatuan;
             dgtransaksi.Rows[i].Cells[6].Value = qty;
@@ -119,12 +114,12 @@ namespace WindowsFormsApp2
         void getBarang()
         {
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT kode_produk, nama_produk FROM products", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT id, nama_produk FROM products", conn);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                id = reader["kode_produk"].ToString();
+                id = reader["id"].ToString();
                 nama = reader["nama_produk"].ToString();
                 cbnamak.Items.Add(id + "-" + nama);
             }
@@ -138,7 +133,7 @@ namespace WindowsFormsApp2
         {
             MySqlConnection conn = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gatolin");
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("select harga_produk from products where kode_produk like '" + cbnamak.Text.Split('-')[0].Trim() + "%'", conn);
+            MySqlCommand cmd = new MySqlCommand("select harga_produk from products where id like '" + cbnamak.Text.Split('-')[0].Trim() + "%'", conn);
             MySqlDataReader reader = cmd.ExecuteReader();
             string harga_satuan = "";
 

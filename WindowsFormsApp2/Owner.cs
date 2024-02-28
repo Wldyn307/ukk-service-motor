@@ -51,28 +51,68 @@ namespace WindowsFormsApp2
 
         void filter()
         {
-            try
             {
-                MySqlConnection conn = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gatolin");
+                try
                 {
-                    if (conn.State == ConnectionState.Closed)
-                        conn.Open();
-                    using (DataTable dt = new DataTable("log"))
+                    // Ambil nilai dari ComboBox dan DateTimePicker
+                    string selectedRole = comboBox1.SelectedItem?.ToString();
+                    DateTime fromDate = dt1.Value;
+                    DateTime toDate = dt2.Value;
+                    /*string searchText = searchtxt.Text.Trim(); // Get the search text*/
+
+                    // Query dasar
+                   string baseQuery = "SELECT l.id, l.id_user, u.nama, u.role, l.activity, l.created_at " +"FROM log l " +  "JOIN users u ON l.id_user = u.id";
+
+                    // Persiapkan parameter dan kondisi WHERE
+                    List<MySqlParameter> parameters = new List<MySqlParameter>();
+                    string whereCondition = "";
+
+                    // Tambahkan kondisi role jika dipilih
+                    if (!string.IsNullOrEmpty(selectedRole))
                     {
-                        using (MySqlCommand cmd = new MySqlCommand("SELECT l.id, l.id_user, u.nama, u.role, l.activity, l.created_at FROM log l JOIN users u ON l.id_user = u.id WHERE DATE (l.created_at) >= DATE (@fromdate) AND DATE (l.created_at) < DATE (@todate + INTERVAL 1 DAY)", conn))
+                        whereCondition += " u.role = @role";
+                        parameters.Add(new MySqlParameter("@role", selectedRole));
+                    }
+
+                    // Tambahkan kondisi tanggal jika dipilih
+                    if (fromDate != DateTime.Now && toDate != DateTime.Now)
+                    {
+                        if (!string.IsNullOrEmpty(whereCondition))
+                            whereCondition += " AND";
+                        whereCondition += " DATE(l.created_at) BETWEEN @fromdate AND @todate";
+                        parameters.Add(new MySqlParameter("@fromdate", fromDate.Date));
+                        parameters.Add(new MySqlParameter("@todate", toDate.Date.AddDays(0))); // Tambah 1 hari agar mencakup hingga akhir hari yang dipilih
+                    }
+
+                    // Gabungkan semua kondisi menjadi satu query
+                    string fullQuery = baseQuery;
+                    if (!string.IsNullOrEmpty(whereCondition))
+                        fullQuery += " WHERE" + whereCondition;
+
+                    // Eksekusi query
+                    using (MySqlConnection conn = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gatolin"))
+                    {
+                        if (conn.State == ConnectionState.Closed)
+                            conn.Open();
+
+                        using (DataTable dt = new DataTable("log"))
                         {
-                            cmd.Parameters.AddWithValue("@fromdate", dt1.Value);
-                            cmd.Parameters.AddWithValue("@todate", dt2.Value);
-                            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(cmd);
-                            mySqlDataAdapter.Fill(dt);
-                            dataGridView1.DataSource = dt;
+                            using (MySqlCommand cmd = new MySqlCommand(fullQuery, conn))
+                            {
+                                foreach (MySqlParameter parameter in parameters)
+                                    cmd.Parameters.Add(parameter);
+
+                                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(cmd);
+                                mySqlDataAdapter.Fill(dt);
+                                dataGridView1.DataSource = dt;
+                            }
                         }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -289,6 +329,17 @@ namespace WindowsFormsApp2
         private void bunifuButton3_Click(object sender, EventArgs e)
         {
             filter();
+        }
+
+        private void comboBox1_SelectedIndexChanged_2(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ownerBarang().Show();
         }
     }
 

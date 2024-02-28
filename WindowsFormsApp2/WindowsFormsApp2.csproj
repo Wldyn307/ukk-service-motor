@@ -61,6 +61,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
       <HintPath>..\..\bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>..\..\bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
       <HintPath>..\..\bunifu\BunifuCrack\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
     </Reference>
@@ -177,6 +180,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Data.cs" />
+    <Compile Include="dbadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dbadmin.Designer.cs">
+      <DependentUpon>dbadmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="dbkasir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +228,12 @@
     <Compile Include="Owner.Designer.cs">
       <DependentUpon>Owner.cs</DependentUpon>
     </Compile>
+    <Compile Include="ownerBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ownerBarang.Designer.cs">
+      <DependentUpon>ownerBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="ownerT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +255,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="dbadmin.resx">
+      <DependentUpon>dbadmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dbkasir.resx">
       <DependentUpon>dbkasir.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Owner.resx">
       <DependentUpon>Owner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ownerBarang.resx">
+      <DependentUpon>ownerBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ownerT.resx">
       <DependentUpon>ownerT.cs</DependentUpon>
